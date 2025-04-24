@@ -7,6 +7,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const[phone,setPhone]=useState();
  
 
   const handleSubmit = async (e) => {
@@ -76,6 +77,28 @@ const Register = () => {
                             className="form-control custom-input  "
                             value={name}
                             onChange={(e) => setName(e.target.value)}
+                          />
+                        </div>
+                      </div>
+
+                      <div className=" flex-row align-items-center mb-2">
+                        <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div className="form-outline flex-fill mb-0">
+                          
+                          <label
+                            className="form-label text-white"
+                            htmlFor="form3Example1c"
+                          >
+                            Mobile No
+                          </label>
+                          <input
+                            type="text"
+                            id="form3Example1c"
+                            className="form-control custom-input  "
+                            maxLength={10}
+                            minLength={10}
+                            value={phone}
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </div>
                       </div>
