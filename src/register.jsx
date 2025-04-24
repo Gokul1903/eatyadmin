@@ -7,16 +7,16 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const[phone,setPhone]=useState();
+  const [phone,setPhone]=useState();
  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password) {
+    if (!name || !email || !password ||!phone) {
       setMessage("Missing parameter");
       return;
     }
-    const newUser = { name, email, password };
+    const newUser = { name, email, password ,phone};
     try {
       const res = await fetch(`${API_URL}/admin/Owner_signup`, {
         method: "POST",
@@ -98,7 +98,7 @@ const Register = () => {
                             maxLength={10}
                             minLength={10}
                             value={phone}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(e) => setPhone(e.target.value)}
                           />
                         </div>
                       </div>
